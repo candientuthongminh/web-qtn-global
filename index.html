@@ -2,69 +2,109 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Cân Điện Tử QTN GLOBAL</title>
-
-<style>
-body { font-family: Arial; margin: 0; background: #f1f5f9; text-align: center; }
-
-header { background: #0f172a; color: white; padding: 20px; }
-
-.product {
-  background: white;
-  padding: 20px;
-  margin: 20px auto;
-  border-radius: 10px;
-  width: 300px;
-}
-
-.btn {
-  padding: 10px 20px;
-  background: #22c55e;
-  color: white;
-  border: none;
-  border-radius: 8px;
-}
-
-.chat-buttons {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-}
-
-.chat-buttons a {
-  display: block;
-  margin: 10px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  color: white;
-  text-align: center;
-  line-height: 50px;
-}
-
-.zalo { background: #0084ff; }
-.messenger { background: #00b2ff; }
-</style>
+<title>QTN GLOBAL</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-<img src="logo.jpg" width="80"><br>
-<h2>Cân Điện Tử QTN GLOBAL</h2>
-</header>
+<!-- HEADER -->
+<div class="header-fixed">
 
-<div class="product">
-  <h3>Cân điện tử thông minh</h3>
-  <p>Liên hệ ngay để nhận báo giá</p>
-  <button class="btn">Mua ngay</button>
+    <div class="top-header">
+        <div class="container top-flex">
+            <img src="images/logo.png" class="logo">
+
+            <div class="top-info">
+                <div>📍 Số 14 Ngõ 68 Đường Giáp Hải - Hà Nội</div>
+                <div>📧 qtnglobal.com@gmail.com<br>📞 0383598603</div>
+                <div>🚚 Miễn phí vận chuyển<br>Đơn trên 1 triệu</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <ul class="menu">
+            <li><a href="#">TRANG CHỦ</a></li>
+            <li><a href="#">GIỚI THIỆU</a></li>
+
+            <li class="has-dropdown">
+                <a href="#">SẢN PHẨM ▼</a>
+                <ul class="dropdown">
+                    <li><a href="sanpham.html">Cân bàn điện tử</a></li>
+                    <li><a href="#">Cân treo</a></li>
+                    <li class="has-sub">
+                        <a href="#">Cân kỹ thuật ▶</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Cân phân tích</a></li>
+                            <li><a href="#">Cân phòng thí nghiệm</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Cân chống nước</a></li>
+                    <li><a href="#">Cân in tem mã vạch</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#">CATALOG</a></li>
+            <li><a href="#">TIN TỨC</a></li>
+        </ul>
+    </div>
+
 </div>
 
-<div class="chat-buttons">
-  <a href="https://zalo.me/0383598603" target="_blank" class="zalo">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
-  </a>
-  <a href="https://m.me/https://www.facebook.com/profile.php?id=61574328998141" target="_blank" class="messenger">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger">
-  </a>
+<!-- SLIDER -->
+<div class="slider">
+    <div class="slide active">
+        <div class="text">
+            <h1>Cân điện tử QTN GLOBAL</h1>
+            <p>Chính xác từng gram – Nâng tầm giá trị</p>
+
+            <div class="btn-group">
+                <a href="https://zalo.me/0383598603" class="btn zalo">Zalo</a>
+                <a href="tel:0383598603" class="btn phone">📞 0383598603</a>
+            </div>
+        </div>
+
+        <div class="img-right">
+            <img src="images/FB530.png">
+        </div>
+    </div>
 </div>
+
+<!-- SẢN PHẨM -->
+<div class="container">
+
+    <div class="section-title">
+        <span>Sản phẩm mới</span>
+        <a href="#">Xem tất cả ></a>
+    </div>
+
+    <div class="product-grid">
+
+        <div class="card">
+            <img src="images/FB530 1.jpg">
+            <h3>Cân Bàn Điện Tử X4252 + FB530</h3>
+            <p>Liên hệ</p>
+            <a href="sanpham.html" class="btn">Đọc tiếp</a>
+        </div>
+
+        <div class="card">
+            <img src="images/AWH4.jpg">
+            <h3>Cân điện tử EXCELL AWH4</h3>
+            <p>Liên hệ</p>
+            <a href="sanpham1.html" class="btn">Đọc tiếp</a>
+        </div>
+
+        <div class="card">
+            <img src="images/ALC.png">
+            <h3>Cân điện tử đếm VIBRA ALC 3A</h3>
+            <p>Liên hệ</p>
+            <a href="sanpham2.html" class="btn">Đọc tiếp</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

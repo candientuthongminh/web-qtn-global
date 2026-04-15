@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Chi tiết sản phẩm</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header-fixed">
+    <div class="top-header">
+        <div class="container top-flex">
+            <img src="images/logo.png" class="logo">
+            <div class="top-info">
+                <div>📍 Hà Nội</div>
+                <div>📧 qtnglobal@gmail.com</div>
+                <div>📞 0383598603</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <ul class="menu">
+            <li><a href="index.html">TRANG CHỦ</a></li>
+            <li><a href="#">SẢN PHẨM</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+
+<div class="product-layout">
+
+<!-- LEFT -->
+<div class="product-left">
+    <img id="mainImg" src="images/FB530 1.jpg" class="main-img">
+
+    <div class="thumb">
+        <img src="images/FB530 1.jpg" onclick="changeImg(this)">
+        <img src="images/FB530 3.jpg" onclick="changeImg(this)">
+        <img src="images/FB530 4.jpg" onclick="changeImg(this)">
+        <img src="images/FB530 2.jpg" onclick="changeImg(this)">
+    </div>
+</div>
+
+<!-- RIGHT -->
+<div class="product-right">
+    <h1>Cân Bàn Điện Tử X4252 + FB530</h1>
+
+    <p class="price">Liên hệ</p>
+
+    <div class="info-extra">
+    <p>📍 <strong>Xuất xứ:</strong> Đài Loan</p>
+    <p>✔ <strong>Trạng thái:</strong> Còn hàng</p>
+    <p>🛡 <strong>Bảo hành:</strong> 1 năm</p>
+</div>
+
+    <div class="btn-buy">
+        <button class="buy">MUA NGAY</button>
+        <button class="cart">ADD TO CART</button>
+    </div>
+</div>
+
+</div>
+
+<!-- TAB -->
+<div class="tabs">
+
+<div class="tab-menu">
+    <button class="tab-btn active" onclick="openTab(0)">Mô tả sản phẩm</button>
+    <button class="tab-btn" onclick="openTab(1)">Thông số kỹ thuật</button>
+</div>
+
+<!-- MÔ TẢ -->
+<div class="tab-content active">
+<ul>
+<li>Độ chính xác: 1/15,000 (độ chính xác nội bộ 1/60,000)</li>
+<li>Đơn vị trọng lượng gồm: kg, g, lb</li>
+<li>Có chức năng tự động hiệu chỉnh</li>
+<li>Có chức năng mặc định số lượng, trọng lượng, trừ bì, tích lũy trọng lượng</li>
+<li>Có chức năng kiểm tra hiệu chuẩn (CHECK WEIGH: HI, OK, LO)</li>
+<li>Có chức năng đếm số lượng đơn giản, trọng lượng tịnh / trọng lượng cả bì</li>
+<li>Có chức năng cân động vật</li>
+<li>Có chức năng in (thời gian, ngày tháng ...)</li>
+</ul>
+</div>
+
+<!-- THÔNG SỐ -->
+<div class="tab-content">
+<table class="spec-table">
+<tr><td>Hóa đơn in</td><td>Tiếng Việt hoặc Tiếng Anh hoặc Tiếng Trung Quốc</td></tr>
+<tr><td>Máy in Head</td><td>MCBF 10x10^5 dòng</td></tr>
+<tr><td>Tốc độ in</td><td>1.0 LPS ± 20%</td></tr>
+<tr><td>Ribbon Cassette</td><td>Khoảng 7 x 10^3 dòng</td></tr>
+</table>
+</div>
+
+</div>
+
+</div>
+
+<script>
+function changeImg(el){
+    document.getElementById("mainImg").src = el.src;
+}
+
+function openTab(index){
+    let btns = document.querySelectorAll(".tab-btn");
+    let tabs = document.querySelectorAll(".tab-content");
+
+    btns.forEach(b => b.classList.remove("active"));
+    tabs.forEach(t => t.classList.remove("active"));
+
+    btns[index].classList.add("active");
+    tabs[index].classList.add("active");
+}
+</script>
+
+</body>
+</html>
