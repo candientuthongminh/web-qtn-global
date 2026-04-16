@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header-top">
+    <div class="logo">
+        <img src="logo.png">
+    </div>
+
+    <div class="contact">
+        <span>📍 Hà Nội</span>
+        <span>📧 qtnglobal@gmail.com</span>
+        <span>📞 0383598603</span>
+    </div>
+</div>
+
+<!-- MENU -->
+<div class="navbar">
+    <ul class="menu">
+        <li><a href="index.html">TRANG CHỦ</a></li>
+        <li><a href="#">SẢN PHẨM</a></li>
+    </ul>
+</div>
+
+<!-- PRODUCT -->
+<div class="product-detail">
+
+    <!-- IMAGE -->
+    <div class="product-img">
+        <img src="images/canbandung.jpg" alt="">
+    </div>
+
+    <!-- INFO -->
+    <div class="product-info">
+        <h1>Cân Bàn Điện Tử X4252 + FB530</h1>
+
+        <div class="contact">Liên hệ</div>
+
+        <p>📍 Xuất xứ: Đài Loan</p>
+        <p>✔ Trạng thái: Còn hàng</p>
+        <p>🛡 Bảo hành: 1 năm</p>
+
+        <a href="#" class="btn btn-buy">MUA NGAY</a>
+        <a href="#" class="btn btn-cart">ADD TO CART</a>
+
+        <div class="product-desc">
+            <h3>Mô tả sản phẩm</h3>
+            <p>- Độ chính xác cao</p>
+            <p>- Đơn vị: kg, g, lb</p>
+            <p>- Tự động hiệu chỉnh</p>
+            <p>- Cân động vật</p>
+            <p>- Hiển thị rõ nét</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

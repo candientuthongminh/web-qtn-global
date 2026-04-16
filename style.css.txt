@@ -1,0 +1,106 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.contact span {
+    margin-left: 15px;
+}
+
+/* MENU */
+.navbar {
+    background: red;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    padding: 0 40px;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu li:hover {
+    background: darkred;
+}
+
+/* PRODUCT DETAIL */
+.product-detail {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* IMAGE */
+.product-img img {
+    width: 400px;
+    border: 1px solid #ddd;
+}
+
+/* INFO */
+.product-info {
+    flex: 1;
+}
+
+.product-info h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.product-info .contact {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 15px;
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-buy {
+    background: red;
+}
+
+.btn-cart {
+    background: #3b5998;
+}
+
+/* DESCRIPTION */
+.product-desc {
+    margin-top: 30px;
+    line-height: 1.6;
+}
