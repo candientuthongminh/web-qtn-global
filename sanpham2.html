@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Cân điện tử đếm Vibra ALC</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header-fixed">
+    <div class="top-header">
+        <div class="container top-flex">
+            <img src="images/logo.png" class="logo">
+            <div class="top-info">
+                <div>📍 Hà Nội</div>
+                <div>📧 qtnglobal.com@gmail.com</div>
+                <div>📞 0383598603</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <ul class="menu">
+            <li><a href="index.html">TRANG CHỦ</a></li>
+            <li><a href="#">SẢN PHẨM</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+
+<div class="product-layout">
+
+<!-- LEFT -->
+<div class="product-left">
+    <img id="mainImg" src="images/ALC.png" class="main-img">
+
+    <div class="thumb">
+        <img src="images/ALC.png" onclick="changeImg(this)">
+        <img src="images/ALC.png" onclick="changeImg(this)">
+        <img src="images/ALC.png" onclick="changeImg(this)">
+    </div>
+</div>
+
+<!-- RIGHT -->
+<div class="product-right">
+    <h1>Cân điện tử đếm Vibra ALC</h1>
+
+    <p class="price">Liên hệ</p>
+
+    <div class="info-extra">
+        <p>📍 <strong>Xuất xứ:</strong> Nhật Bản</p>
+        <p>✔ <strong>Trạng thái:</strong> Còn hàng</p>
+        <p>🛡 <strong>Bảo hành:</strong> 1 năm</p>
+    </div>
+
+    <div class="btn-buy">
+        <button class="buy">MUA NGAY</button>
+        <button class="cart">ADD TO CART</button>
+    </div>
+</div>
+
+</div>
+
+<!-- TAB -->
+<div class="tabs">
+
+<div class="tab-menu">
+    <button class="tab-btn active" onclick="openTab(0)">Mô tả sản phẩm</button>
+    <button class="tab-btn" onclick="openTab(1)">Thông số kỹ thuật</button>
+</div>
+
+<!-- MÔ TẢ -->
+<div class="tab-content active">
+<ul>
+<li>► Cân đếm Vibra ALC được làm bằng hợp kim thép, độ bền cao, chịu va đập tốt</li>
+<li>► Vỏ cân bằng nhựa ABS, dễ dàng vệ sinh</li>
+<li>► Khay cân inox rộng, thuận tiện đặt vật phẩm</li>
+<li>► Màn hình hiển thị LCD nền sáng, dễ quan sát</li>
+<li>► Sử dụng cảm biến độ chính xác cao, ổn định</li>
+</ul>
+</div>
+
+<!-- THÔNG SỐ -->
+<div class="tab-content">
+<table class="spec-table">
+
+<tr>
+<td><strong>MODEL</strong></td>
+<td colspan="5"><strong>Vibra ALC</strong></td>
+</tr>
+
+<tr>
+<td>Mức cân</td>
+<td>1.5kg</td>
+<td>3kg</td>
+<td>6kg</td>
+<td>15kg</td>
+<td>30kg</td>
+</tr>
+
+<tr>
+<td>Sai số</td>
+<td>0.05g</td>
+<td>0.1g</td>
+<td>0.2g</td>
+<td>0.5g</td>
+<td>1g</td>
+</tr>
+
+<tr>
+<td>Màn hình hiển thị</td>
+<td colspan="5">3 màn hình LCD, đèn nền xanh</td>
+</tr>
+
+<tr>
+<td>Đơn vị</td>
+<td colspan="5">kg, lb, g, oz</td>
+</tr>
+
+<tr>
+<td>Nguồn</td>
+<td colspan="5">AC 220V / Pin sạc 6V4AH</td>
+</tr>
+
+<tr>
+<td>Kích thước khay cân</td>
+<td colspan="5">230 x 290 mm</td>
+</tr>
+
+<tr>
+<td>Nhiệt độ sử dụng</td>
+<td colspan="5">-5°C ~ 40°C</td>
+</tr>
+
+</table>
+</div>
+
+</div>
+
+</div>
+
+<script>
+function changeImg(el){
+    document.getElementById("mainImg").src = el.src;
+}
+
+function openTab(index){
+    let btns = document.querySelectorAll(".tab-btn");
+    let tabs = document.querySelectorAll(".tab-content");
+
+    btns.forEach(b => b.classList.remove("active"));
+    tabs.forEach(t => t.classList.remove("active"));
+
+    btns[index].classList.add("active");
+    tabs[index].classList.add("active");
+}
+</script>
+
+</body>
+</html>
