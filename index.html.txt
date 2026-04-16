@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>QTN GLOBAL</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="header-fixed">
+
+    <!-- TOP -->
+    <div class="top-header">
+        <div class="container top-flex">
+            <img src="images/logo.png" class="logo">
+
+            <div class="top-info">
+                <div>📍 Hà Nội</div>
+                <div>📧 qtnglobal@gmail.com</div>
+                <div>📞 0383598603</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MENU -->
+    <div class="navbar">
+        <ul class="menu">
+            <li><a href="index.html">TRANG CHỦ</a></li>
+            <li><a href="#">GIỚI THIỆU</a></li>
+
+            <li class="has-dropdown">
+                <a href="#">SẢN PHẨM ▼</a>
+
+                <ul class="dropdown">
+                    <li><a href="#">Cân ô tô</a></li>
+                    <li><a href="#">Cân treo</a></li>
+                    <li><a href="#">Cân sàn điện tử</a></li>
+
+                    <!-- LINK CHUẨN -->
+                    <li><a href="can-bandung.html">Cân bàn đứng</a></li>
+
+                    <li><a href="#">Cân điện tử đếm</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#">CATALOG</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- SLIDER -->
+<div class="slider">
+    <div class="slide container">
+        <div class="text">
+            <h1>Cân điện tử QTN GLOBAL</h1>
+            <p>Chính xác từng gram – Nâng tầm giá trị</p>
+
+            <a class="btn zalo">Zalo</a>
+            <a class="btn phone">0383598603</a>
+        </div>
+
+        <div class="img-right">
+            <img src="images/FB530.png">
+        </div>
+    </div>
+</div>
+
+<!-- PRODUCT -->
+<div class="container">
+
+    <div class="section-title">
+        <span>Sản phẩm mới</span>
+    </div>
+
+    <div class="product-grid">
+
+        <div class="card">
+            <img src="images/FB530-1.jpg">
+            <h3>Cân Bàn Điện Tử X4252 + FB530</h3>
+            <a href="sanpham.html" class="btn">Chi tiết</a>
+        </div>
+
+        <div class="card">
+            <img src="images/AWH4.jpg">
+            <h3>Cân điện tử EXCELL AWH4</h3>
+            <a href="sanpham1.html" class="btn">Chi tiết</a>
+        </div>
+
+        <div class="card">
+            <img src="images/ALC.png">
+            <h3>Cân điện tử VIBRA ALC</h3>
+            <a href="sanpham2.html" class="btn">Chi tiết</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

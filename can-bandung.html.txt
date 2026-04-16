@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Cân bàn đứng</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="header-fixed">
+
+    <div class="top-header">
+        <div class="container top-flex">
+            <img src="images/logo.png" class="logo">
+
+            <div class="top-info">
+                <div>📍 Hà Nội</div>
+                <div>📧 qtnglobal@gmail.com</div>
+                <div>📞 0383598603</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MENU GIỐNG INDEX -->
+    <div class="navbar">
+        <ul class="menu">
+            <li><a href="index.html">TRANG CHỦ</a></li>
+            <li><a href="#">GIỚI THIỆU</a></li>
+
+            <li class="has-dropdown">
+                <a href="#">SẢN PHẨM ▼</a>
+
+                <ul class="dropdown">
+                    <li><a href="#">Cân ô tô</a></li>
+                    <li><a href="#">Cân treo</a></li>
+                    <li><a href="#">Cân sàn điện tử</a></li>
+
+                    <!-- ACTIVE -->
+                    <li><a href="can-bandung.html">Cân bàn đứng</a></li>
+
+                    <li><a href="#">Cân điện tử đếm</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#">CATALOG</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+    <h2 style="margin-top:30px;">Cân bàn đứng</h2>
+
+    <div class="product-grid">
+
+        <div class="card">
+            <img src="images/FB530-1.jpg">
+            <h3>Cân Bàn Điện Tử X4252 + FB530</h3>
+            <a href="sanpham.html" class="btn">Chi tiết</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
