@@ -2,20 +2,19 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Chi tiết sản phẩm</title>
+<title>Cân AWH4</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div class="header-fixed">
     <div class="top-header">
         <div class="container top-flex">
             <img src="images/logo.png" class="logo">
             <div class="top-info">
                 <div>📍 Hà Nội</div>
-                <div>📧 qtnglobal.com@gmail.com</div>
+                <div>📧 qtnglobal@gmail.com</div>
                 <div>📞 0383598603</div>
             </div>
         </div>
@@ -24,7 +23,7 @@
     <div class="navbar">
         <ul class="menu">
             <li><a href="index.html">TRANG CHỦ</a></li>
-            <li><a href="#">SẢN PHẨM</a></li>
+            <li><a href="can-bandung.html">SẢN PHẨM</a></li>
         </ul>
     </div>
 </div>
@@ -33,103 +32,20 @@
 
 <div class="product-layout">
 
-<!-- LEFT -->
 <div class="product-left">
     <img id="mainImg" src="images/AWH4.jpg" class="main-img">
 
     <div class="thumb">
         <img src="images/AWH4.jpg" onclick="changeImg(this)">
-        <img src="images/AWH4.jpg" onclick="changeImg(this)">
-        <img src="images/AWH4.jpg" onclick="changeImg(this)">
     </div>
 </div>
 
-<!-- RIGHT -->
 <div class="product-right">
-    <h1>Cân Điện Tử AWH4</h1>
-
+    <h1>Cân điện tử AWH4</h1>
     <p class="price">Liên hệ</p>
 
-    <div class="info-extra">
-        <p>📍 <strong>Xuất xứ:</strong> Đài Loan</p>
-        <p>✔ <strong>Trạng thái:</strong> Còn hàng</p>
-        <p>🛡 <strong>Bảo hành:</strong> 1 năm</p>
-    </div>
-
-    <div class="btn-buy">
-        <button class="buy">MUA NGAY</button>
-        <button class="cart">ADD TO CART</button>
-    </div>
-</div>
-
-</div>
-
-<!-- TAB -->
-<div class="tabs">
-
-<div class="tab-menu">
-    <button class="tab-btn active" onclick="openTab(0)">Mô tả sản phẩm</button>
-    <button class="tab-btn" onclick="openTab(1)">Thông số kỹ thuật</button>
-</div>
-
-<!-- MÔ TẢ -->
-<div class="tab-content active">
-<ul>
-<li>Độ phân giải cao 1/30.000</li>
-<li>Tốc độ xử lý nhanh (24bit)</li>
-<li>Kỹ thuật số hiệu chuẩn</li>
-<li>Màn hình LCD 6 số, cao 25mm, đèn nền LED</li>
-<li>Đơn vị cân: kg, g, lb, oz</li>
-<li>Chức năng trừ bì, về 0</li>
-<li>Đếm số lượng và tính tổng trọng lượng</li>
-<li>Kiểm tra trọng lượng: HI / OK / LO</li>
-<li>Tự động tắt nguồn khi không sử dụng</li>
-<li>Đĩa cân inox (280 x 230mm)</li>
-</ul>
-</div>
-
-<!-- THÔNG SỐ -->
-<div class="tab-content">
-<table class="spec-table">
-<tr>
-    <td>Khả năng cân</td>
-    <td>
-        3kg x 0.1g<br>
-        6kg x 0.2g<br>
-        15kg x 0.5g<br>
-        30kg x 1g
-    </td>
-</tr>
-
-<tr>
-    <td>Nhiệt độ hoạt động</td>
-    <td>
-        0°C ~ 40°C<br>
-        -10°C ~ 40°C
-    </td>
-</tr>
-
-<tr>
-    <td>Nguồn điện</td>
-    <td>AC 110V / 220V (+10%) + Pin sạc DC 6V / 4Ah</td>
-</tr>
-
-<tr>
-    <td>Kích thước</td>
-    <td>275 x 105 x 310 mm</td>
-</tr>
-
-<tr>
-    <td>Kích thước đĩa</td>
-    <td>280 x 230 mm</td>
-</tr>
-
-<tr>
-    <td>Màn hình</td>
-    <td>LCD 6 số, cao 25mm, đèn nền LED</td>
-</tr>
-
-</table>
+    <p>✔ Độ chính xác cao</p>
+    <p>✔ Dễ sử dụng</p>
 </div>
 
 </div>
@@ -138,18 +54,7 @@
 
 <script>
 function changeImg(el){
-    document.getElementById("mainImg").src = el.src;
-}
-
-function openTab(index){
-    let btns = document.querySelectorAll(".tab-btn");
-    let tabs = document.querySelectorAll(".tab-content");
-
-    btns.forEach(b => b.classList.remove("active"));
-    tabs.forEach(t => t.classList.remove("active"));
-
-    btns[index].classList.add("active");
-    tabs[index].classList.add("active");
+document.getElementById("mainImg").src=el.src;
 }
 </script>
 
