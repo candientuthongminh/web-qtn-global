@@ -1,0 +1,36 @@
+[
+  {
+    "id": "can1",
+    "name": "Cân X4252",
+    "image": "images/FB530-1.jpg",
+    "images": [
+      "images/FB530-1.jpg",
+      "images/FB530-2.jpg",
+      "images/FB530-3.jpg"
+    ],
+    "price": "Liên hệ",
+    "desc": [
+      "Độ chính xác cao",
+      "Bền bỉ"
+    ],
+    "specs": [
+      "Tải trọng: 30kg",
+      "Sai số: 1g"
+    ]
+  },
+  {
+    "id": "can2",
+    "name": "Cân AWH4",
+    "image": "images/AWH4.jpg",
+    "images": [
+      "images/AWH4.jpg"
+    ],
+    "price": "Liên hệ",
+    "desc": [
+      "Thiết kế nhỏ gọn"
+    ],
+    "specs": [
+      "Tải trọng: 30kg"
+    ]
+  }
+]

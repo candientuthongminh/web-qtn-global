@@ -2,92 +2,34 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Chi tiết sản phẩm</title>
+<title>Chi tiết</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="container">
-
 <div id="product-detail"></div>
-
 </div>
 
 <script>
-const url = new URLSearchParams(window.location.search);
-const id = url.get("id");
+const url=new URLSearchParams(window.location.search);
+const id=url.get("id");
 
 fetch("products.json")
-.then(res => res.json())
-.then(data => {
+.then(res=>res.json())
+.then(data=>{
+let p=data.find(x=>x.id===id);
+if(!p){document.getElementById("product-detail").innerHTML="Không có sản phẩm";return;}
 
-    let p = data.find(x => x.id === id);
+let html=`
+<h1>${p.name}</h1>
+<img src="${p.image}" style="width:300px">
+<p>${p.price}</p>
+<ul>${p.desc.map(d=>"<li>"+d+"</li>").join("")}</ul>
+`;
 
-    let images = "";
-    p.images.forEach(img=>{
-        images += `<img src="${img}" onclick="changeImg(this)">`;
-    });
-
-    let desc = "";
-    p.desc.forEach(d=>{
-        desc += `<li>${d}</li>`;
-    });
-
-    let specs = "";
-    p.specs.forEach(s=>{
-        specs += `<tr><td>${s}</td></tr>`;
-    });
-
-    document.getElementById("product-detail").innerHTML = `
-    
-    <div class="product-layout">
-
-        <div class="product-left">
-            <img id="mainImg" src="${p.image}" class="main-img">
-            <div class="thumb">${images}</div>
-        </div>
-
-        <div class="product-right">
-            <h1>${p.name}</h1>
-            <p class="price">${p.price}</p>
-        </div>
-
-    </div>
-
-    <div class="tabs">
-
-        <div class="tab-menu">
-            <button class="tab-btn active" onclick="openTab(0)">Mô tả</button>
-            <button class="tab-btn" onclick="openTab(1)">Thông số</button>
-        </div>
-
-        <div class="tab-content active">
-            <ul>${desc}</ul>
-        </div>
-
-        <div class="tab-content">
-            <table class="spec-table">${specs}</table>
-        </div>
-
-    </div>
-    `;
+document.getElementById("product-detail").innerHTML=html;
 });
-
-function changeImg(el){
-document.getElementById("mainImg").src = el.src;
-}
-
-function openTab(i){
-let btn=document.querySelectorAll(".tab-btn");
-let tab=document.querySelectorAll(".tab-content");
-
-btn.forEach(b=>b.classList.remove("active"));
-tab.forEach(t=>t.classList.remove("active"));
-
-btn[i].classList.add("active");
-tab[i].classList.add("active");
-}
 </script>
 
 </body>
