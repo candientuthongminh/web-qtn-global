@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Chi tiết</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1 id="name"></h1>
+  <img id="img">
+</div>
+
+<script>
+async function loadDetail(){
+  const id = new URLSearchParams(location.search).get("id");
+  const res = await fetch("data/products.json");
+  const data = await res.json();
+  const p = data.find(x => x.id == id);
+  document.getElementById("name").innerText = p.name;
+  document.getElementById("img").src = p.image;
+}
+loadDetail();
+</script>
+
+</body>
+</html>
