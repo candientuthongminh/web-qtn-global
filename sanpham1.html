@@ -1,62 +1,27 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-<meta charset="UTF-8">
-<title>Cân AWH4</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<!-- TAB -->
+<div class="tabs">
 
-<body>
-
-<div class="header-fixed">
-    <div class="top-header">
-        <div class="container top-flex">
-            <img src="images/logo.png" class="logo">
-            <div class="top-info">
-                <div>📍 Hà Nội</div>
-                <div>📧 qtnglobal@gmail.com</div>
-                <div>📞 0383598603</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="navbar">
-        <ul class="menu">
-            <li><a href="index.html">TRANG CHỦ</a></li>
-            <li><a href="can-bandung.html">SẢN PHẨM</a></li>
-        </ul>
-    </div>
+<div class="tab-menu">
+<button class="tab-btn active" onclick="openTab(0)">Mô tả</button>
+<button class="tab-btn" onclick="openTab(1)">Thông số</button>
 </div>
 
-<div class="container">
-
-<div class="product-layout">
-
-<div class="product-left">
-    <img id="mainImg" src="images/AWH4.jpg" class="main-img">
-
-    <div class="thumb">
-        <img src="images/AWH4.jpg" onclick="changeImg(this)">
-    </div>
+<div class="tab-content active">
+<ul>
+<li>Độ phân giải cao</li>
+<li>Màn hình LCD rõ nét</li>
+<li>Tự động tắt nguồn</li>
+<li>Cân chính xác</li>
+</ul>
 </div>
 
-<div class="product-right">
-    <h1>Cân điện tử AWH4</h1>
-    <p class="price">Liên hệ</p>
-
-    <p>✔ Độ chính xác cao</p>
-    <p>✔ Dễ sử dụng</p>
+<div class="tab-content">
+<table class="spec-table">
+<tr><td>Tải trọng</td><td>30kg</td></tr>
+<tr><td>Sai số</td><td>1g</td></tr>
+<tr><td>Nguồn</td><td>220V + Pin</td></tr>
+<tr><td>Kích thước</td><td>280x230mm</td></tr>
+</table>
 </div>
 
 </div>
-
-</div>
-
-<script>
-function changeImg(el){
-document.getElementById("mainImg").src=el.src;
-}
-</script>
-
-</body>
-</html>

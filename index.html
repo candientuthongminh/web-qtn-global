@@ -3,15 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>QTN GLOBAL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- HEADER -->
 <div class="header-fixed">
+
     <div class="top-header">
         <div class="container top-flex">
             <img src="images/logo.png" class="logo">
+
             <div class="top-info">
                 <div>📍 Hà Nội</div>
                 <div>📧 qtnglobal@gmail.com</div>
@@ -23,23 +27,32 @@
     <div class="navbar">
         <ul class="menu">
             <li><a href="index.html">TRANG CHỦ</a></li>
+
             <li class="has-dropdown">
                 <a href="#">SẢN PHẨM ▼</a>
                 <ul class="dropdown">
                     <li><a href="can-bandung.html">Cân bàn đứng</a></li>
                 </ul>
             </li>
+
+            <li><a href="#">LIÊN HỆ</a></li>
         </ul>
     </div>
+
 </div>
 
 <!-- SLIDER -->
 <div class="slider">
+
     <div class="slide active">
         <div class="text">
             <h1>Cân điện tử QTN GLOBAL</h1>
-            <p>Chính xác từng gram</p>
+            <p>Chính xác từng gram – Uy tín hàng đầu</p>
+
+            <br>
+            <a href="can-bandung.html" class="btn">Xem sản phẩm</a>
         </div>
+
         <div class="img-right">
             <img src="images/FB530.png">
         </div>
@@ -47,49 +60,76 @@
 
     <div class="slide">
         <div class="text">
-            <h1>Chất lượng hàng đầu</h1>
+            <h1>Thiết bị cân chính hãng</h1>
+            <p>Đa dạng – Bền bỉ – Giá tốt</p>
+
+            <br>
+            <a href="can-bandung.html" class="btn">Mua ngay</a>
         </div>
+
         <div class="img-right">
             <img src="images/AWH4.jpg">
         </div>
     </div>
+
 </div>
 
+<!-- SẢN PHẨM -->
 <div class="container">
+
     <div class="section-title">
-        <span>Sản phẩm</span>
+        <span>Sản phẩm nổi bật</span>
     </div>
 
     <div class="product-grid">
 
         <div class="card">
             <img src="images/FB530-1.jpg">
-            <h3>Cân bàn X4252</h3>
-            <a href="sanpham.html" class="btn">Xem</a>
+            <h3>Cân Bàn Điện Tử X4252 + FB530</h3>
+            <a href="sanpham.html" class="btn">Xem chi tiết</a>
         </div>
 
         <div class="card">
             <img src="images/AWH4.jpg">
-            <h3>Cân AWH4</h3>
-            <a href="sanpham1.html" class="btn">Xem</a>
+            <h3>Cân điện tử AWH4</h3>
+            <a href="sanpham1.html" class="btn">Xem chi tiết</a>
         </div>
 
         <div class="card">
             <img src="images/ALC.png">
-            <h3>Cân Vibra ALC</h3>
-            <a href="sanpham2.html" class="btn">Xem</a>
+            <h3>Cân điện tử đếm Vibra ALC</h3>
+            <a href="sanpham2.html" class="btn">Xem chi tiết</a>
+        </div>
+
+        <div class="card">
+            <img src="images/FB530-2.jpg">
+            <h3>Cân bàn công nghiệp</h3>
+            <a href="sanpham.html" class="btn">Xem chi tiết</a>
         </div>
 
     </div>
+
 </div>
 
+<!-- FOOTER -->
+<div style="margin-top:50px;background:#222;color:#fff;padding:30px 0;">
+    <div class="container">
+        <h3>QTN GLOBAL</h3>
+        <p>Chuyên cung cấp cân điện tử chính hãng</p>
+        <p>📞 0383598603</p>
+        <p>📧 qtnglobal@gmail.com</p>
+    </div>
+</div>
+
+<!-- SCRIPT SLIDER -->
 <script>
-let slides=document.querySelectorAll(".slide");
-let i=0;
+let slides = document.querySelectorAll(".slide");
+let i = 0;
+
 setInterval(()=>{
-slides[i].classList.remove("active");
-i=(i+1)%slides.length;
-slides[i].classList.add("active");
+    slides[i].classList.remove("active");
+    i = (i + 1) % slides.length;
+    slides[i].classList.add("active");
 },4000);
 </script>
 
