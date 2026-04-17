@@ -1,0 +1,27 @@
+<!-- TAB -->
+<div class="tabs">
+
+<div class="tab-menu">
+<button class="tab-btn active" onclick="openTab(0)">Mô tả</button>
+<button class="tab-btn" onclick="openTab(1)">Thông số</button>
+</div>
+
+<div class="tab-content active">
+<ul>
+<li>Độ phân giải cao</li>
+<li>Màn hình LCD rõ nét</li>
+<li>Tự động tắt nguồn</li>
+<li>Cân chính xác</li>
+</ul>
+</div>
+
+<div class="tab-content">
+<table class="spec-table">
+<tr><td>Tải trọng</td><td>30kg</td></tr>
+<tr><td>Sai số</td><td>1g</td></tr>
+<tr><td>Nguồn</td><td>220V + Pin</td></tr>
+<tr><td>Kích thước</td><td>280x230mm</td></tr>
+</table>
+</div>
+
+</div>
