@@ -1,0 +1,40 @@
+[
+  {
+    "id": "can1",
+    "name": "Cân Bàn Điện Tử X4252 + FB530",
+    "image": "images/FB530-1.jpg",
+    "images": [
+      "images/FB530-1.jpg",
+      "images/FB530-2.jpg",
+      "images/FB530-3.jpg"
+    ],
+    "price": "Liên hệ",
+    "desc": [
+      "Độ chính xác cao",
+      "Có chức năng trừ bì",
+      "Màn hình LED dễ đọc"
+    ],
+    "specs": [
+      "Tải trọng: 30kg",
+      "Sai số: 1g",
+      "Nguồn: 220V"
+    ]
+  },
+
+  {
+    "id": "can2",
+    "name": "Cân điện tử AWH4",
+    "image": "images/AWH4.jpg",
+    "images": ["images/AWH4.jpg"],
+    "price": "Liên hệ",
+    "desc": [
+      "Độ phân giải cao",
+      "Màn hình LCD",
+      "Tự động tắt nguồn"
+    ],
+    "specs": [
+      "Tải trọng: 30kg",
+      "Sai số: 1g"
+    ]
+  }
+]
