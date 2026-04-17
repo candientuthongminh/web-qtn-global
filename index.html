@@ -8,51 +8,79 @@
 </head>
 <body>
 
-<div class="header-fixed">
-<div class="top-header">
-<div class="container top-flex">
-<img src="images/logo.png" class="logo">
-<div class="top-info">
-<div>📍 Hà Nội</div>
-<div>📧 qtnglobal@gmail.com</div>
-<div>📞 0383598603</div>
-</div>
-</div>
+<!-- HEADER -->
+<div class="header">
+  <div class="container flex">
+    <img src="images/logo.png" class="logo">
+    <div class="info">
+      <span>📍 Hà Nội</span>
+      <span>📧 qtnglobal.com@gmail.com</span>
+      <span>📞 0383598603</span>
+    </div>
+  </div>
 </div>
 
+<!-- MENU -->
 <div class="navbar">
-<ul class="menu">
-<li><a href="index.html">TRANG CHỦ</a></li>
-<li class="has-dropdown">
-<a href="#">SẢN PHẨM ▼</a>
-<ul class="dropdown">
-<li><a href="can-bandung.html">Cân bàn đứng</a></li>
-</ul>
-</li>
-</ul>
-</div>
+  <a href="index.html">TRANG CHỦ</a>
+  <a href="can-bandung.html">CÂN BÀN ĐỨNG</a>
 </div>
 
+<!-- SLIDER -->
+<div class="slider">
+  <img id="slide" src="images/ALC.png">
+</div>
+
+<!-- SEARCH -->
 <div class="container">
-<h2>Sản phẩm nổi bật</h2>
-<div class="product-grid" id="home-products"></div>
+  <input type="text" id="search" placeholder="🔍 Tìm sản phẩm...">
+</div>
+
+<!-- PRODUCTS -->
+<div class="container">
+  <h2>Sản phẩm nổi bật</h2>
+  <div class="grid" id="list"></div>
 </div>
 
 <script>
+let products=[];
+
+// load data
 fetch("products.json")
-.then(res => res.json())
-.then(data => {
-let html="";
-data.forEach(p=>{
-html+=`
-<div class="card">
-<img src="${p.image}">
-<h3>${p.name}</h3>
-<a href="product.html?id=${p.id}" class="btn">Xem chi tiết</a>
-</div>`;
+.then(r=>r.json())
+.then(data=>{
+  products=data;
+  render(products);
 });
-document.getElementById("home-products").innerHTML=html;
+
+// render
+function render(list){
+  let html="";
+  list.forEach(p=>{
+    html+=`
+    <div class="card">
+      <img src="${p.image}">
+      <h3>${p.name}</h3>
+      <a href="product.html?id=${p.id}" class="btn">Xem chi tiết</a>
+    </div>`;
+  });
+  document.getElementById("list").innerHTML=html;
+}
+
+// search
+document.getElementById("search").addEventListener("input",e=>{
+  let key=e.target.value.toLowerCase();
+  let filter=products.filter(p=>p.name.toLowerCase().includes(key));
+  render(filter);
 });
+
+// slider
+let slides=["images/ALC.png","images/FB530.png","images/DJ28SS.png"];
+let i=0;
+setInterval(()=>{
+  i=(i+1)%slides.length;
+  document.getElementById("slide").src=slides[i];
+},3000);
 </script>
 
 </body>

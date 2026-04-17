@@ -2,33 +2,54 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Chi tiết</title>
+<title>Chi tiết sản phẩm</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-<div id="product-detail"></div>
+<div class="navbar">
+  <a href="index.html">TRANG CHỦ</a>
 </div>
 
+<div class="container" id="detail"></div>
+
 <script>
-const url=new URLSearchParams(window.location.search);
-const id=url.get("id");
+const id=new URLSearchParams(location.search).get("id");
 
 fetch("products.json")
-.then(res=>res.json())
+.then(r=>r.json())
 .then(data=>{
-let p=data.find(x=>x.id===id);
-if(!p){document.getElementById("product-detail").innerHTML="Không có sản phẩm";return;}
+  let p=data.find(x=>x.id===id);
 
-let html=`
-<h1>${p.name}</h1>
-<img src="${p.image}" style="width:300px">
-<p>${p.price}</p>
-<ul>${p.desc.map(d=>"<li>"+d+"</li>").join("")}</ul>
-`;
+  if(!p){
+    document.getElementById("detail").innerHTML="Không tìm thấy sản phẩm";
+    return;
+  }
 
-document.getElementById("product-detail").innerHTML=html;
+  let html=`
+  <h1>${p.name}</h1>
+
+  <div class="detail">
+    <img src="${p.image}">
+
+    <div>
+      <h2 class="price">${p.price}</h2>
+
+      <h3>Mô tả</h3>
+      <ul>${p.desc.map(d=>"<li>"+d+"</li>").join("")}</ul>
+
+      <h3>Thông số</h3>
+      <ul>${p.specs.map(s=>"<li>"+s+"</li>").join("")}</ul>
+    </div>
+  </div>
+
+  <h3>Hình ảnh</h3>
+  <div class="gallery">
+    ${p.images.map(img=>`<img src="${img}">`).join("")}
+  </div>
+  `;
+
+  document.getElementById("detail").innerHTML=html;
 });
 </script>
 
