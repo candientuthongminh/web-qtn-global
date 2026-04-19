@@ -2,27 +2,175 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>QTN GLOBAL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cân điện tử QTN GLOBAL</title>
+<meta name="description" content="Chuyên cung cấp cân điện tử chính xác cao, giá tốt toàn quốc">
+
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#f3f6fb;color:#123}header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08)}.wrap{max-width:1200px;margin:auto;padding:16px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.logo{font-size:38px;font-weight:900;color:#0b3a8f}.hotline{background:#1d5fd1;color:#fff;padding:12px 18px;border-radius:30px;font-weight:700}.nav{background:linear-gradient(90deg,#0a2d78,#3f8cff);color:#fff}.nav a{color:#fff;text-decoration:none;margin-right:24px;font-weight:700}.hero{background:linear-gradient(90deg,#08245f,#1d5fd1,#8fd8ff);color:#fff}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}.btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;margin:6px}.orange{background:#ff8a00;color:#fff}.white{background:#fff;color:#123}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}.card{background:#fff;border-radius:18px;padding:14px;box-shadow:0 4px 12px rgba(0,0,0,.08)}img{max-width:100%;display:block;border-radius:12px}.title{font-size:42px;font-weight:900}.section-title{font-size:36px;font-weight:900;color:#0b3a8f}footer{background:#08111f;color:#fff;text-align:center;padding:24px;margin-top:30px}@media(max-width:768px){.hero-grid{grid-template-columns:1fr}.title{font-size:32px}.logo{font-size:30px}}
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #fff;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.hotline {
+  background: #2d6cdf;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+
+/* MENU */
+.menu {
+  background: linear-gradient(to right, #2d6cdf, #6aa9ff);
+  text-align: center;
+}
+
+.menu a {
+  color: white;
+  padding: 12px 15px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* BANNER */
+.banner {
+  background: url("images/banner.jpg") no-repeat center;
+  background-size: cover;
+  color: white;
+  padding: 80px 20px;
+}
+
+.banner-text {
+  max-width: 500px;
+}
+
+.banner h1 {
+  font-size: 28px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: orange;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* CATEGORY */
+.category {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.item {
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.item img {
+  width: 100%;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .banner h1 {
+    font-size: 22px;
+  }
+}
 </style>
 </head>
+
 <body>
-<header><div class='wrap top'><div><div class='logo'>QTN GLOBAL</div><div>Chính xác tạo niềm tin</div></div><div class='hotline'>Hotline: 0969.13.636</div></div><div class='nav'><div class='wrap'><a href='#'>Trang chủ</a><a href='#sp'>Sản phẩm</a><a href='#'>Liên hệ</a></div></div></header>
-<section class='hero'><div class='wrap hero-grid'><div><div class='title'>GIẢI PHÁP CÂN ĐIỆN TỬ CHO DOANH NGHIỆP</div><p>Sản phẩm chính hãng • Giao hàng toàn quốc • Hỗ trợ kỹ thuật</p><a class='btn orange' href='#sp'>Nhận báo giá</a><a class='btn white' href='#sp'>Xem sản phẩm</a></div><div class='grid'>
-<div class='card'><img src='https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80'></div>
-<div class='card'><img src='https://images.unsplash.com/photo-1581091215367-59ab6dcef10c?auto=format&fit=crop&w=600&q=80'></div>
-<div class='card'><img src='https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80'></div>
-<div class='card'><img src='https://images.unsplash.com/photo-1580894908361-967195033215?auto=format&fit=crop&w=600&q=80'></div>
-</div></div></section>
-<section class='wrap' id='sp'><div class='section-title'>DANH MỤC SẢN PHẨM</div><div class='grid'>
-<div class='card'><img src='https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80'><h3>Cân bàn</h3></div>
-<div class='card'><img src='https://images.unsplash.com/photo-1581091215367-59ab6dcef10c?auto=format&fit=crop&w=600&q=80'><h3>Cân treo</h3></div>
-<div class='card'><img src='https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80'><h3>Cân sàn</h3></div>
-<div class='card'><img src='https://images.unsplash.com/photo-1580894908361-967195033215?auto=format&fit=crop&w=600&q=80'><h3>Cân mini</h3></div>
-<div class='card'><img src='https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&w=600&q=80'><h3>Cân phân tích</h3></div>
-<div class='card'><img src='https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=600&q=80'><h3>Cân đếm</h3></div>
-</div></section>
-<footer>QTN GLOBAL © 2026 - Chính xác tạo niềm tin</footer>
-</body></html>
+
+<header class="header">
+  <div class="logo">QTN GLOBAL</div>
+  <div class="hotline">0969.13.636 – 0383.598.603</div>
+</header>
+
+<nav class="menu">
+  <a href="#">Trang chủ</a>
+  <a href="#">Giới thiệu</a>
+  <a href="#">Sản phẩm</a>
+  <a href="#">Liên hệ</a>
+</nav>
+
+<section class="banner">
+  <div class="banner-text">
+    <h1>GIẢI PHÁP CÂN ĐIỆN TỬ<br>CHÍNH XÁC CHO DOANH NGHIỆP</h1>
+
+    <ul>
+      <li>✔ Sản phẩm chính hãng</li>
+      <li>✔ Báo giá nhanh – giao hàng toàn quốc</li>
+      <li>✔ Hỗ trợ kỹ thuật chuyên nghiệp</li>
+    </ul>
+
+    <a class="btn" href="tel:096913636">NHẬN BÁO GIÁ NGAY</a>
+  </div>
+</section>
+
+<section class="category">
+  <h2>DANH MỤC SẢN PHẨM</h2>
+
+  <div class="grid">
+    <div class="item">
+      <img src="images/canban.jpg">
+      <p>CÂN BÀN</p>
+    </div>
+
+    <div class="item">
+      <img src="images/cantreo.jpg">
+      <p>CÂN TREO</p>
+    </div>
+
+    <div class="item">
+      <img src="images/candem.jpg">
+      <p>CÂN ĐẾM</p>
+    </div>
+
+    <div class="item">
+      <img src="images/canphantich.jpg">
+      <p>CÂN PHÂN TÍCH</p>
+    </div>
+
+    <div class="item">
+      <img src="images/cansan.jpg">
+      <p>CÂN SÀN</p>
+    </div>
+
+    <div class="item">
+      <img src="images/canmini.jpg">
+      <p>CÂN MINI</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
