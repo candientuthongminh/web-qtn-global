@@ -3,145 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>QTN GLOBAL - Cân điện tử</title>
-
 <style>
-body {margin:0;font-family:Arial}
-
-/* HEADER */
-.header {
-  display:flex;justify-content:space-between;
-  padding:10px 15px;align-items:center;
-}
-.logo img {height:50px}
-.hotline {
-  background:#2d6cdf;color:#fff;
-  padding:8px 12px;border-radius:20px;
-}
-
-/* MENU */
-.menu {
-  background:linear-gradient(to right,#2d6cdf,#6aa9ff);
-  text-align:center;
-}
-.menu a {
-  color:#fff;padding:12px;
-  display:inline-block;text-decoration:none;
-}
-
-/* BANNER */
-.banner {
-  background:url("images/banner.jpg") no-repeat center;
-  background-size:cover;
-  padding:80px 20px;color:#fff;
-}
-.btn {
-  background:orange;color:#fff;
-  padding:10px 20px;
-  display:inline-block;
-  margin-top:10px;
-  border-radius:5px;
-  text-decoration:none;
-}
-
-/* GRID */
-.category {padding:20px;text-align:center}
-.grid {
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-}
-.item {
-  background:#f5f5f5;
-  padding:10px;border-radius:10px;
-}
-.item img {
-  width:100%;height:140px;
-  object-fit:cover;
-}
-
-/* FLOAT BUTTON */
-.call-btn, .zalo-btn {
-  position:fixed;right:10px;
-  padding:12px 15px;
-  border-radius:50px;
-  color:#fff;text-decoration:none;
-}
-.call-btn {bottom:80px;background:red;}
-.zalo-btn {bottom:20px;background:#0084ff;}
+body{margin:0;font-family:Arial;background:#f5f5f5}
+header{background:#0b5ed7;color:#fff;padding:10px 20px;display:flex;justify-content:space-between;align-items:center}
+nav a{color:#fff;margin:0 10px;text-decoration:none;font-weight:bold}
+.banner{background:linear-gradient(90deg,#0b5ed7,#5aa3ff);color:#fff;padding:40px;display:flex;justify-content:space-between;align-items:center}
+.banner h1{font-size:32px}
+.btn{padding:12px 20px;border:none;border-radius:5px;cursor:pointer}
+.btn-primary{background:#ff7a00;color:#fff}
+.btn-secondary{background:#28a745;color:#fff;margin-left:10px}
+.section{padding:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px}
+.card{background:#fff;padding:15px;text-align:center;border-radius:10px}
+footer{background:#222;color:#fff;text-align:center;padding:20px}
 </style>
-
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="logo">
-    <img src="images/logo.png">
-  </div>
-  <div class="hotline">0969.13.636</div>
+<header>
+<div><b>QTN GLOBAL</b></div>
+<div>Hotline: 0905913636 - 0383598603</div>
+<nav>
+<a href="#">Trang chủ</a>
+<a href="#">Giới thiệu</a>
+<a href="#">Sản phẩm</a>
+<a href="#">Liên hệ</a>
+</nav>
 </header>
 
-<!-- MENU -->
-<nav class="menu">
-  <a href="#">Trang chủ</a>
-  <a href="#">Sản phẩm</a>
-  <a href="#">Liên hệ</a>
-</nav>
-
-<!-- BANNER -->
 <section class="banner">
-  <h1>GIẢI PHÁP CÂN ĐIỆN TỬ</h1>
-  <p>Chính xác – Bền bỉ – Giá tốt</p>
-  <a class="btn" href="tel:096913636">NHẬN BÁO GIÁ</a>
+<div>
+<h1>Giải pháp cân điện tử chính xác cho doanh nghiệp</h1>
+<p>- Sản phẩm chính hãng</p>
+<p>- Báo giá nhanh - giao hàng toàn quốc</p>
+<p>- Hỗ trợ kỹ thuật chuyên nghiệp</p>
+<button class="btn btn-primary">Mua ngay</button>
+<button class="btn btn-secondary">Liên hệ ngay</button>
+</div>
+<img src="https://via.placeholder.com/300" alt="cân điện tử">
 </section>
 
-<!-- SẢN PHẨM -->
-<section class="category">
-  <h2>DANH MỤC SẢN PHẨM</h2>
-
-  <div class="grid">
-
-    <div class="item">
-      <img src="images/canban.jpg">
-      <p>CÂN BÀN</p>
-    </div>
-
-    <div class="item">
-      <img src="images/cantreo.jpg">
-      <p>CÂN TREO</p>
-    </div>
-
-    <div class="item">
-      <img src="images/candem.jpg">
-      <p>CÂN ĐẾM</p>
-    </div>
-
-    <div class="item">
-      <img src="images/canphantich.jpg">
-      <p>CÂN PHÂN TÍCH</p>
-    </div>
-
-    <div class="item">
-      <img src="images/cansan.jpg">
-      <p>CÂN SÀN</p>
-    </div>
-
-    <div class="item">
-      <img src="images/canmini.jpg">
-      <p>CÂN MINI</p>
-    </div>
-
-  </div>
+<section class="section">
+<h2>Danh mục sản phẩm</h2>
+<div class="grid">
+<div class="card">Cân bàn</div>
+<div class="card">Cân treo</div>
+<div class="card">Cân đếm</div>
+<div class="card">Cân phân tích</div>
+<div class="card">Cân sàn</div>
+<div class="card">Cân mini</div>
+</div>
 </section>
 
-<!-- NÚT GỌI -->
-<a class="call-btn" href="tel:096913636">📞 Gọi</a>
-
-<!-- NÚT ZALO -->
-<a class="zalo-btn" href="https://zalo.me/096913636">💬 Zalo</a>
+<footer>
+<p>QTN GLOBAL - Chuyên cung cấp cân điện tử</p>
+</footer>
 
 </body>
 </html>
