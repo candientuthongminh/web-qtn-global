@@ -1,21 +1,20 @@
-import { getProducts } from './api.js';
+async function loadProducts() {
+  const res = await fetch("data/products.json");
+  const products = await res.json();
 
-const container = document.getElementById("product-list");
-
-async function load() {
-  const products = await getProducts();
+  const container = document.getElementById("product-list");
 
   container.innerHTML = "";
 
   products.forEach(p => {
     container.innerHTML += `
       <div class="product">
-        <img src="${p.images[0]}" />
+        <img src="images/${p.image_folder}/main.jpg">
         <h3>${p.name}</h3>
-        <a href="chitiet.html?id=${p.id}">Xem chi tiết</a>
+        <a href="chitiet.html?slug=${p.slug}">Xem chi tiết</a>
       </div>
     `;
   });
 }
 
-load();
+loadProducts();
