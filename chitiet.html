@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<title>Chi tiết sản phẩm</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Chi tiết sản phẩm</title>
 </head>
 <body>
 
-<h1 id="name"></h1>
-<img id="main-img">
-<div id="thumbs"></div>
+<div id="detail"></div>
 
-<h3>Thông số kỹ thuật</h3>
-<table id="specs"></table>
+<script>
+const params = new URLSearchParams(window.location.search);
+const slug = params.get("slug");
 
-<script type="module" src="js/product.js"></script>
+fetch("data/products.json")
+  .then(res => res.json())
+  .then(products => {
+    const p = products.find(x => x.slug === slug);
+
+    if (!p) return;
+
+    document.getElementById("detail").innerHTML = `
+      <h1>${p.name}</h1>
+      <img src="images/${p.image_folder}/main.jpg">
+      <p>${p.mo_ta}</p>
+      <pre>${p.thong_so_ky_thuat}</pre>
+    `;
+  });
+</script>
+
 </body>
 </html>
