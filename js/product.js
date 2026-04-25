@@ -1,33 +1,41 @@
-import { getProducts, getVariants } from './api.js';
+import { getProducts } from './api.js';
 
 const id = new URLSearchParams(window.location.search).get("id");
 
-Promise.all([getProducts(), getVariants()])
-.then(([products, variants]) => {
+getProducts().then(products => {
 
-  const product = products.find(p => p.id === id);
+  const p = products.find(x => x.id == id);
 
-  document.getElementById("name").innerText = product.name;
-  document.getElementById("main-img").src = product.image_main;
+  if (!p) {
+    document.body.innerHTML = "Không tìm thấy sản phẩm";
+    return;
+  }
 
+  document.getElementById("name").innerText = p.name;
+  document.getElementById("main-img").src = p.images[0];
+  document.getElementById("desc").innerText = p.mo_ta;
+  document.getElementById("spec").innerText = p.thong_so;
+
+  // ảnh nhỏ
   const thumbs = document.getElementById("thumbs");
-  const images = product.images.split(",");
 
-  images.forEach(img => {
-    thumbs.innerHTML += `<img src="${img}" onclick="document.getElementById('main-img').src='${img}'">`;
+  p.images.forEach(img => {
+    thumbs.innerHTML += `
+      <img src="${img}" onclick="document.getElementById('main-img').src='${img}'">
+    `;
   });
 
-  const table = document.getElementById("specs");
+  // variants
+  const table = document.getElementById("variants");
 
-  variants
-    .filter(v => v.product_id.includes(id))
-    .forEach(v => {
-      table.innerHTML += `
-        <tr>
-          <td>${v.weight}</td>
-          <td>${v.price}</td>
-          <td>${v.specs}</td>
-        </tr>
-      `;
-    });
+  p.variants.forEach(v => {
+    table.innerHTML += `
+      <tr>
+        <td>${v.model}</td>
+        <td>${v.capacity}</td>
+        <td>${v.division}</td>
+      </tr>
+    `;
+  });
+
 });
