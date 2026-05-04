@@ -5,54 +5,37 @@
 <title>Chi tiết</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header class="header">
-  <img src="images/logo.png">
-  <h1>QTN GLOBAL</h1>
+<header class="topbar">
+  <img src="images/logo.png" class="logo">
 </header>
 
 <div id="detail"></div>
 
+<a class="zalo" href="https://zalo.me/0905913636" target="_blank">Zalo</a>
+
 <script src="products.js"></script>
 
 <script>
-const slug = new URLSearchParams(window.location.search).get("slug");
+const slug = new URLSearchParams(location.search).get("slug");
 const p = products.find(x => x.slug === slug);
 
-let current = 0;
-
-const html = `
+document.getElementById("detail").innerHTML = `
 <div class="detail">
-  <div class="slider">
-    <img id="mainImg" src="${p.images[0]}">
+  <div class="left">
+    <img id="main" src="${p.images[0]}">
     <div class="thumbs">
-      ${p.images.map((img,i)=>`
-        <img src="${img}" onclick="changeImg(${i})">
-      `).join("")}
+      ${p.images.map(i => `<img src="${i}" onclick="document.getElementById('main').src='${i}'">`).join("")}
     </div>
   </div>
 
-  <div class="info">
+  <div class="right">
     <h1>${p.name}</h1>
     <p>${p.desc}</p>
-
-    <h3>Thông số:</h3>
-    <ul>
-      ${p.specs.map(s=>`<li>${s}</li>`).join("")}
-    </ul>
-
-    <a href="index.html" class="btn">Trang chủ</a>
+    <ul>${p.specs.map(s=>`<li>${s}</li>`).join("")}</ul>
   </div>
-</div>
-`;
-
-document.getElementById("detail").innerHTML = html;
-
-function changeImg(i){
-  document.getElementById("mainImg").src = p.images[i];
-}
+</div>`;
 </script>
 
 </body>
