@@ -1,1 +1,60 @@
-<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Chi tiết</title><link rel='stylesheet' href='css/style.css'></head><body><header class='top'><img src='images/logo.png' class='logo'></header><div id='detail'></div><script src='js/products.js'></script><script src='js/detail.js'></script></body></html>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi tiết sản phẩm</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <img src="images/logo.png" class="logo">
+</header>
+
+<div class="container" id="product-detail"></div>
+
+<script src="products.js"></script>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const slug = params.get("slug");
+
+const product = PRODUCTS.find(p => p.slug === slug);
+
+const container = document.getElementById("product-detail");
+
+if(product){
+  container.innerHTML = `
+    <div class="detail-box">
+
+      <div class="left">
+        <img id="main-img" src="${product.image}" class="main-img">
+
+        <div class="thumbs">
+          ${product.images.map(img => `
+            <img src="${img}" onclick="changeImg('${img}')">
+          `).join("")}
+        </div>
+      </div>
+
+      <div class="right">
+        <h1>${product.name}</h1>
+        <p>${product.description}</p>
+
+        <h3>Thông số kỹ thuật</h3>
+        <pre>${product.specs}</pre>
+
+        <a href="index.html" class="btn">Trang chủ</a>
+      </div>
+
+    </div>
+  `;
+}
+
+function changeImg(src){
+  document.getElementById("main-img").src = src;
+}
+</script>
+
+</body>
+</html>
