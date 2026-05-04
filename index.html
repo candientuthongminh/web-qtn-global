@@ -5,27 +5,33 @@
 <title>QTN GLOBAL</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header class="header">
+<header class="topbar">
   <div class="logo-box">
-    <img src="images/logo.png">
-    <h1>QTN GLOBAL</h1>
+    <img src="images/logo.png" class="logo">
+    <div>QTN GLOBAL</div>
   </div>
-
-  <input type="text" id="search" placeholder="🔍 Tìm sản phẩm...">
+  <div class="hotline">Hotline: 0905913636 - 0383598603</div>
 </header>
 
 <nav class="menu">
-  <a href="#">Cân bàn</a>
-  <a href="#">Cân đếm</a>
-  <a href="#">Cân kỹ thuật</a>
+  <a>Cân bàn</a>
+  <a>Cân đếm</a>
+  <a>Cân kỹ thuật</a>
+  <a>Cân treo</a>
+  <a>Cân sàn</a>
 </nav>
 
-<div class="container" id="product-list"></div>
+<div class="container">
+  <input id="search" placeholder="🔍 Tìm sản phẩm...">
+  <div id="list" class="grid"></div>
+</div>
+
+<a class="zalo" href="https://zalo.me/0905913636" target="_blank">Zalo</a>
 
 <script src="products.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
