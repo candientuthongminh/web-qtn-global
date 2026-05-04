@@ -1,1 +1,1 @@
-document.getElementById('grid').innerHTML=PRODUCTS.map(p=>`<div class='card'><h3>${p.name}</h3><p>${p.desc}</p><a class='btn' href='chitiet.html?slug=${p.slug}'>Xem chi tiet</a></div>`).join('');
+document.getElementById('grid').innerHTML=PRODUCTS.map(p=>`<div class='card'><img src='${p.img}' onerror="this.style.display='none'"><h3>${p.name}</h3><p>${p.desc}</p><a class='btn' href='chitiet.html?slug=${p.slug}'>Xem chi tiết</a></div>`).join('');

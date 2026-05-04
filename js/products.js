@@ -1,1 +1,1 @@
-const PRODUCTS=[{id:1,name:'Can dien tu Jadever JWL',slug:'jadever-jwl',desc:'Can dien tu chat luong cao'},{id:2,name:'Can dien tu Vibra HAW',slug:'vibra-haw',desc:'Can ky thuat chinh xac'}];
+const PRODUCTS=[{id:1,name:'Cân điện tử Jadever JWL',slug:'jadever-jwl',img:'images/jwl/main.jpg',desc:'Cân điện tử chất lượng cao'},{id:2,name:'Cân điện tử Vibra HAW',slug:'vibra-haw',img:'images/vibra-haw/main.jpg',desc:'Cân kỹ thuật chính xác'}];
