@@ -1,0 +1,1 @@
+const slug=new URLSearchParams(location.search).get('slug');const p=PRODUCTS.find(x=>x.slug===slug)||PRODUCTS[0];document.getElementById('detail').innerHTML=`<div class='card' style='margin:20px'><h2>${p.name}</h2><p>${p.desc}</p><a class='btn' href='index.html'>Trang chu</a></div>`;
