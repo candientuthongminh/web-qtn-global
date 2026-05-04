@@ -1,12 +1,21 @@
 const container = document.getElementById("product-list");
+const searchInput = document.getElementById("search");
 
-const html = products.map(p => `
-  <div class="card">
-    <img src="${p.images[0]}" class="thumb">
-    <h2>${p.name}</h2>
-    <p>${p.desc}</p>
-    <a href="chitiet.html?slug=${p.slug}" class="btn">Xem chi tiết</a>
-  </div>
-`).join("");
+function render(list){
+  container.innerHTML = list.map(p => `
+    <div class="card">
+      <img src="${p.images[0]}">
+      <h3>${p.name}</h3>
+      <p>${p.desc}</p>
+      <a href="chitiet.html?slug=${p.slug}" class="btn">Xem chi tiết</a>
+    </div>
+  `).join("");
+}
 
-container.innerHTML = html;
+render(products);
+
+searchInput.addEventListener("input", e => {
+  const keyword = e.target.value.toLowerCase();
+  const filtered = products.filter(p => p.name.toLowerCase().includes(keyword));
+  render(filtered);
+});
