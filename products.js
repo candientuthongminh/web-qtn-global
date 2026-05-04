@@ -10,14 +10,14 @@ images:[
 ]
 },
   {
-  name: "Cân điện tử OHAUS",
-  slug: "ohaus",
-  desc: "Cân điện tử OHAUS chính hãng, độ chính xác cao",
+  name: "Cân điện tử đếm VIBRA ALC",
+  slug: "vibra-alc",
+  desc: "Cân điện tử đếm Vibra ALC là dòng cân đếm số lượng cao cấp của Nhật Bản với độ chính xác và độ ổn định cao, thiết kế chống bụi chắc chắn với vỏ nhựa ABS và mặt cân inox, trang bị 3 màn hình LCD hiển thị trọng lượng, trọng lượng mẫu và số lượng, tích hợp bàn phím chức năng mạnh mẽ, phù hợp sử dụng trong sản xuất, kho vận, đếm linh kiện và kiểm kê hàng hóa, hỗ trợ các chức năng cân, trừ bì, cộng dồn, về 0 và đếm mẫu. :contentReference[oaicite:0]{index=0}",
   specs: ["3kg", "6kg", "15kg"],
   images: [
-    "images/ohaus/main.jpg",
-    "images/ohaus/1.jpg",
-    "images/ohaus/2.jpg"
+    "images/vibra-alc/main.jpg",
+    "images/vibra-alc/1.jpg",
+    "images/vibra-alc/2.jpg"
   ]
 }
 ];
