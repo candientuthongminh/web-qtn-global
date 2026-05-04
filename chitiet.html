@@ -1,39 +1,46 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Chi tiết</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Chi tiết</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="header">
-  <img src="images/logo.png" class="logo">
+  <img src="images/logo.png">
   <h1>QTN GLOBAL</h1>
 </header>
 
 <div id="detail"></div>
 
 <script src="products.js"></script>
-<script>
-const urlParams = new URLSearchParams(window.location.search);
-const slug = urlParams.get("slug");
 
-const product = products.find(p => p.slug === slug);
+<script>
+const slug = new URLSearchParams(window.location.search).get("slug");
+const p = products.find(x => x.slug === slug);
+
+let current = 0;
 
 const html = `
-<div class="detail-container">
-  <div class="gallery">
-    ${product.images.map(img => `<img src="${img}">`).join("")}
+<div class="detail">
+  <div class="slider">
+    <img id="mainImg" src="${p.images[0]}">
+    <div class="thumbs">
+      ${p.images.map((img,i)=>`
+        <img src="${img}" onclick="changeImg(${i})">
+      `).join("")}
+    </div>
   </div>
 
   <div class="info">
-    <h1>${product.name}</h1>
-    <p>${product.desc}</p>
+    <h1>${p.name}</h1>
+    <p>${p.desc}</p>
 
-    <h3>Thông số kỹ thuật:</h3>
+    <h3>Thông số:</h3>
     <ul>
-      ${product.specs.map(s => `<li>${s}</li>`).join("")}
+      ${p.specs.map(s=>`<li>${s}</li>`).join("")}
     </ul>
 
     <a href="index.html" class="btn">Trang chủ</a>
@@ -42,6 +49,10 @@ const html = `
 `;
 
 document.getElementById("detail").innerHTML = html;
+
+function changeImg(i){
+  document.getElementById("mainImg").src = p.images[i];
+}
 </script>
 
 </body>
