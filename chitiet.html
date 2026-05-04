@@ -2,58 +2,46 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Chi tiết sản phẩm</title>
+  <title>Chi tiết</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="header">
   <img src="images/logo.png" class="logo">
+  <h1>QTN GLOBAL</h1>
 </header>
 
-<div class="container" id="product-detail"></div>
+<div id="detail"></div>
 
 <script src="products.js"></script>
-
 <script>
-const params = new URLSearchParams(window.location.search);
-const slug = params.get("slug");
+const urlParams = new URLSearchParams(window.location.search);
+const slug = urlParams.get("slug");
 
-const product = PRODUCTS.find(p => p.slug === slug);
+const product = products.find(p => p.slug === slug);
 
-const container = document.getElementById("product-detail");
+const html = `
+<div class="detail-container">
+  <div class="gallery">
+    ${product.images.map(img => `<img src="${img}">`).join("")}
+  </div>
 
-if(product){
-  container.innerHTML = `
-    <div class="detail-box">
+  <div class="info">
+    <h1>${product.name}</h1>
+    <p>${product.desc}</p>
 
-      <div class="left">
-        <img id="main-img" src="${product.image}" class="main-img">
+    <h3>Thông số kỹ thuật:</h3>
+    <ul>
+      ${product.specs.map(s => `<li>${s}</li>`).join("")}
+    </ul>
 
-        <div class="thumbs">
-          ${product.images.map(img => `
-            <img src="${img}" onclick="changeImg('${img}')">
-          `).join("")}
-        </div>
-      </div>
+    <a href="index.html" class="btn">Trang chủ</a>
+  </div>
+</div>
+`;
 
-      <div class="right">
-        <h1>${product.name}</h1>
-        <p>${product.description}</p>
-
-        <h3>Thông số kỹ thuật</h3>
-        <pre>${product.specs}</pre>
-
-        <a href="index.html" class="btn">Trang chủ</a>
-      </div>
-
-    </div>
-  `;
-}
-
-function changeImg(src){
-  document.getElementById("main-img").src = src;
-}
+document.getElementById("detail").innerHTML = html;
 </script>
 
 </body>
