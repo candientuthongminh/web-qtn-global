@@ -1,19 +1,14 @@
-const list=document.getElementById("list");
-const search=document.getElementById("search");
+const container = document.getElementById("product-list");
 
-function render(data){
-list.innerHTML=data.map(p=>`
-<div class="card">
-<img src="${p.images[0]}">
-<h3>${p.name}</h3>
-<p>${p.desc}</p>
-<a class="btn" href="chitiet.html?slug=${p.slug}">Xem</a>
-</div>`).join("");
-}
+products.forEach(p => {
+  container.innerHTML += `
+    <div class="card">
+      <img src="images/${p.image_folder}/main.jpg"
+           onerror="this.src='images/${p.image_folder}/1.jpg'">
 
-render(products);
+      <h3>${p.name}</h3>
 
-search.oninput=()=>{
-const k=search.value.toLowerCase();
-render(products.filter(p=>p.name.toLowerCase().includes(k)));
-};
+      <a href="chitiet.html?slug=${p.slug}" class="btn">Chi tiết</a>
+    </div>
+  `;
+});
