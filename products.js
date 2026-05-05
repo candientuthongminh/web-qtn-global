@@ -1,23 +1,20 @@
-const products=[
-{
-name:"Cân điện tử Jadever JWL",
-slug:"jadever-jwl",
-desc:"Cân điện tử chất lượng cao",
-specs:["3kg","6kg","15kg","30kg"],
-images:[
-"images/jwl/main.jpg",
-"images/jwl/1.jpg"
-]
-},
+const products = [
   {
-  name: "Cân điện tử đếm VIBRA ALC",
-  slug: "vibra-alc",
-  desc: "Cân điện tử đếm Vibra ALC là dòng cân đếm số lượng cao cấp của Nhật Bản với độ chính xác và độ ổn định cao, thiết kế chống bụi chắc chắn với vỏ nhựa ABS và mặt cân inox, trang bị 3 màn hình LCD hiển thị trọng lượng, trọng lượng mẫu và số lượng, tích hợp bàn phím chức năng mạnh mẽ, phù hợp sử dụng trong sản xuất, kho vận, đếm linh kiện và kiểm kê hàng hóa, hỗ trợ các chức năng cân, trừ bì, cộng dồn, về 0 và đếm mẫu. :contentReference[oaicite:0]{index=0}",
-  specs: ["3kg", "6kg", "15kg"],
-  images: [
-    "images/vibra-alc/main.jpg",
-    "images/vibra-alc/1.jpg",
-    "images/vibra-alc/2.jpg"
-  ]
-}
+    id: 1,
+    name: "Cân điện tử Jadever JWL",
+    slug: "jadever-jwl",
+    category: "Cân bàn",
+    image_folder: "jwl",
+    description: "Cân điện tử chất lượng cao, độ chính xác tốt, phù hợp nhiều nhu cầu.",
+    specs: ["3kg", "6kg", "15kg", "30kg"]
+  },
+  {
+    id: 2,
+    name: "Cân điện tử đếm VIBRA ALC",
+    slug: "vibra-alc",
+    category: "Cân đếm",
+    image_folder: "vibra-alc",
+    description: "Cân đếm Vibra ALC chính xác cao, thiết kế bền bỉ, dùng trong kho và sản xuất.",
+    specs: ["3kg", "6kg", "15kg"]
+  }
 ];
