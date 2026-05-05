@@ -15,19 +15,7 @@
 <div class="container" id="product-list"></div>
 
 <script src="products.js"></script>
-<script>
-const list = document.getElementById("product-list");
-
-products.forEach(p => {
-  list.innerHTML += `
-    <div class="card">
-      <img src="images/${p.image_folder}/1.jpg">
-      <h3>${p.name}</h3>
-      <a href="chitiet.html?slug=${p.slug}" class="btn">Chi tiết</a>
-    </div>
-  `;
-});
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
