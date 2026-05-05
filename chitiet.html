@@ -12,48 +12,120 @@
   <img src="images/logo.png" class="logo">
 </header>
 
-<div class="detail-container">
-  
-  <!-- LEFT: SLIDER -->
-  <div class="slider">
-    <img id="main-img">
+<div class="detail">
+
+  <div class="left">
+    <div class="slider">
+      <button class="nav prev">‹</button>
+      <img id="main-img">
+      <button class="nav next">›</button>
+    </div>
+
+    <div id="thumbs" class="thumbs"></div>
   </div>
 
-  <!-- RIGHT: INFO -->
-  <div class="info">
+  <div class="right">
     <h1 id="name"></h1>
     <p id="desc"></p>
-    <ul id="specs"></ul>
+    <ul id="variants"></ul>
   </div>
 
 </div>
 
 <script src="products.js"></script>
-<script>
-const url = new URLSearchParams(window.location.search);
-const slug = url.get("slug");
 
+<script>
+const slug = new URLSearchParams(location.search).get("slug");
 const p = products.find(x => x.slug === slug);
 
-if(p){
-  document.getElementById("name").innerText = p.name;
-  document.getElementById("desc").innerText = p.description;
+document.getElementById("name").innerText = p.name;
+document.getElementById("desc").innerText = p.description;
 
-  document.getElementById("specs").innerHTML =
-    p.specs.map(s => `<li>${s}</li>`).join("");
+p.variants.forEach(v=>{
+  document.getElementById("variants").innerHTML += `<li>${v}</li>`;
+});
 
-  let index = 1;
-  const img = document.getElementById("main-img");
+// ===== SLIDER PRO MAX++ =====
+let images = [];
+let current = 0;
 
-  function loadImage(){
-    img.src = `images/${p.image_folder}/${index}.jpg`;
-    index++;
-    if(index > 5) index = 1;
+const mainImg = document.getElementById("main-img");
+const thumbs = document.getElementById("thumbs");
+
+function loadImages() {
+  let i = 1;
+
+  function check() {
+    const path = `images/${p.image_folder}/${i}.jpg`;
+    const img = new Image();
+    img.src = path;
+
+    img.onload = () => {
+      images.push(path);
+      i++;
+      if(i<=5) check();
+      else init();
+    };
+
+    img.onerror = () => {
+      if(i===1){
+        images.push(`images/${p.image_folder}/main.jpg`);
+      }
+      init();
+    };
   }
 
-  loadImage();
-  setInterval(loadImage, 3000); // auto slider
+  check();
 }
+
+function init(){
+  show(0);
+
+  images.forEach((src,i)=>{
+    const t = document.createElement("img");
+    t.src = src;
+    t.className="thumb";
+
+    t.onclick = ()=>{
+      current=i;
+      show(i);
+    };
+
+    thumbs.appendChild(t);
+  });
+
+  auto();
+}
+
+function show(i){
+  current=i;
+  mainImg.src = images[i];
+
+  document.querySelectorAll(".thumb").forEach((t,idx)=>{
+    t.classList.toggle("active", idx===i);
+  });
+}
+
+// next prev
+document.querySelector(".next").onclick=()=>{
+  current=(current+1)%images.length;
+  show(current);
+};
+
+document.querySelector(".prev").onclick=()=>{
+  current=(current-1+images.length)%images.length;
+  show(current);
+};
+
+// auto
+function auto(){
+  setInterval(()=>{
+    current=(current+1)%images.length;
+    show(current);
+  },3000);
+}
+
+loadImages();
 </script>
 
 </body>
