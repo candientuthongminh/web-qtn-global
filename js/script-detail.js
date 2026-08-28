@@ -1,7 +1,7 @@
 /* =====================================================
    QTN GLOBAL
    PRODUCT DETAIL SCRIPT
-   VERSION 1.0
+   VERSION 1.1
 
    PART 1:
    LOAD PRODUCT
@@ -9,17 +9,13 @@
    - Tên sản phẩm
    - Hãng
    - Xuất xứ
-   - Mô tả
+   - Mô tả trong TAB MÔ TẢ
 ===================================================== */
-
 
 
 // =====================================================
 // 1. LẤY ID SẢN PHẨM TỪ URL
-// Ví dụ:
-// chitiet.html?id=10
 // =====================================================
-
 
 const detailId =
 Number(
@@ -27,15 +23,12 @@ Number(
 );
 
 
-
 // =====================================================
 // 2. TÌM SẢN PHẨM TRONG products.js
 // =====================================================
 
-
 const rawProduct =
 products.find(p => p.id === detailId);
-
 
 
 const product =
@@ -46,19 +39,15 @@ rawProduct
 null;
 
 
-
 // lưu sản phẩm hiện tại
 window.currentProduct = product;
-
 
 
 // =====================================================
 // 3. HIỂN THỊ THÔNG TIN SẢN PHẨM
 // =====================================================
 
-
 if(product){
-
 
 
     // TÊN
@@ -75,8 +64,6 @@ if(product){
     }
 
 
-
-
     // HÃNG
 
     const brand =
@@ -89,8 +76,6 @@ if(product){
         product.brand || "";
 
     }
-
-
 
 
     // XUẤT XỨ
@@ -107,24 +92,33 @@ if(product){
     }
 
 
-
-
+    // =================================================
     // MÔ TẢ
+    // HIỂN THỊ TRONG TAB MÔ TẢ
+    // =================================================
 
-    const desc =
-    document.getElementById("productDesc");
+    const tabDescription =
+    document.getElementById(
+        "productTabDescription"
+    );
 
 
-    if(desc){
+    if(tabDescription){
 
-        desc.innerText =
-        product.description || "";
+        const sectionDescription =
+            product.sections?.description ||
+            product.description ||
+            "";
+
+
+        tabDescription.innerHTML =
+            sectionDescription;
 
     }
 
-
-
 }
+
+
 /* =====================================================
    PART 2:
    PRODUCT IMAGE SLIDER
@@ -136,14 +130,7 @@ if(product){
 ===================================================== */
 
 
-
 if(product){
-
-
-
-    // =================================================
-    // TẠO DANH SÁCH ẢNH
-    // =================================================
 
 
     const imageList = [];
@@ -162,53 +149,33 @@ if(product){
     }
 
 
-
-
-
-    // =================================================
     // HIỂN THỊ ẢNH CHÍNH
-    // =================================================
-
 
     const mainImage =
     document.getElementById("mainImage");
 
 
-
     if(mainImage){
-
 
         mainImage.src =
         imageList[0];
 
-
     }
 
 
-
-
-
-
-    // =================================================
     // TẠO THUMBNAIL
-    // =================================================
-
 
     const thumbList =
     document.getElementById("thumbList");
 
 
-
     if(thumbList){
-
 
 
         let html = "";
 
 
-
         imageList.forEach((img,index)=>{
-
 
 
             html += `
@@ -226,7 +193,6 @@ if(product){
         });
 
 
-
         thumbList.innerHTML =
         html;
 
@@ -234,41 +200,27 @@ if(product){
     }
 
 
-
-
-
-    // =================================================
     // ĐỔI ẢNH KHI CLICK
-    // =================================================
-
 
     window.changeDetailImage =
     function(index){
 
 
-
         if(mainImage){
-
 
             mainImage.src =
             imageList[index];
 
-
         }
-
 
 
         document
         .querySelectorAll("#thumbList img")
         .forEach(img=>{
 
-
             img.classList.remove("active");
 
-
         });
-
-
 
 
         const active =
@@ -277,12 +229,9 @@ if(product){
         );
 
 
-
         if(active){
 
-
             active.classList.add("active");
-
 
         }
 
@@ -290,14 +239,7 @@ if(product){
     };
 
 
-
-
-
-
-    // =================================================
     // ACTIVE ẢNH ĐẦU TIÊN
-    // =================================================
-
 
     setTimeout(()=>{
 
@@ -306,22 +248,19 @@ if(product){
         document.querySelector("#thumbList img");
 
 
-
         if(first){
-
 
             first.classList.add("active");
 
-
         }
-
 
 
     },100);
 
 
-
 }
+
+
 /* =====================================================
    PART 2.1:
    AUTO IMAGE SLIDER
@@ -339,13 +278,11 @@ if(product){
     let autoIndex = 0;
 
 
-
     setInterval(()=>{
 
 
         const thumbs =
         document.querySelectorAll("#thumbList img");
-
 
 
         if(thumbs.length <= 1){
@@ -355,9 +292,7 @@ if(product){
         }
 
 
-
         autoIndex++;
-
 
 
         if(autoIndex >= thumbs.length){
@@ -367,22 +302,19 @@ if(product){
         }
 
 
-
         if(window.changeDetailImage){
-
 
             window.changeDetailImage(autoIndex);
 
-
         }
-
 
 
     },4000);
 
 
-
 }
+
+
 /* =====================================================
    PART 3:
    RELATED PRODUCT CONVEYOR SLIDER
@@ -394,13 +326,10 @@ if(product){
 ===================================================== */
 
 
-
 function renderRelatedProducts(){
 
 
-
     if(!rawProduct) return;
-
 
 
     const related = products.filter(p =>
@@ -411,23 +340,18 @@ function renderRelatedProducts(){
     );
 
 
-
     window.relatedProducts =
     related;
-
 
 
     const track =
     document.getElementById("relatedProducts");
 
 
-
     if(!track) return;
 
 
-
     let html = "";
-
 
 
     related.forEach(p=>{
@@ -435,7 +359,6 @@ function renderRelatedProducts(){
 
         const item =
         getTranslatedProduct(p) || p;
-
 
 
         html += `
@@ -454,12 +377,10 @@ function renderRelatedProducts(){
 
         </div>
 
-
         `;
 
 
     });
-
 
 
     // nhân đôi để chạy vô hạn
@@ -468,98 +389,70 @@ function renderRelatedProducts(){
     html + html;
 
 
-
     startRelatedSlider();
 
 
 }
 
 
-
-
-
-
-
 function startRelatedSlider(){
-
 
 
     const track =
     document.getElementById("relatedProducts");
 
 
-
     if(!track) return;
-
 
 
     let position = 0;
 
 
-
     let speed = 0.5;
-
 
 
     let running = true;
 
 
-
     function move(){
-
 
 
         if(running){
 
 
-
             position -= speed;
-
 
 
             const half =
             track.scrollWidth / 2;
 
 
-
             if(Math.abs(position) >= half){
-
 
                 position = 0;
 
-
             }
-
 
 
             track.style.transform =
             `translateX(${position}px)`;
 
-
         }
-
 
 
         requestAnimationFrame(move);
 
-
-
     }
 
 
-
     move();
-
-
 
 
     const windowBox =
     document.querySelector(".related-slider-window");
 
 
-
     if(windowBox){
-
 
 
         windowBox.addEventListener(
@@ -572,7 +465,6 @@ function startRelatedSlider(){
         );
 
 
-
         windowBox.addEventListener(
             "mouseleave",
             ()=>{
@@ -583,47 +475,29 @@ function startRelatedSlider(){
         );
 
 
-
     }
 
 
 }
 
 
-
-
-
-
 // chạy sau khi load sản phẩm
 
 setTimeout(()=>{
 
-
     renderRelatedProducts();
 
-
 },500);
+
+
 /* =====================================================
    PART 4:
    SPECIFICATION TABLE
-   BẢNG + TEXT CHUNG MỘT BẢNG
-
-   Cách hoạt động:
-   1. Đọc bảng thông số gốc từ product.specs
-   2. Tự động xác định bảng có bao nhiêu cột
-   3. Phần text bên dưới sẽ dùng đúng số cột đó
-   4. Ô thiếu ở dòng cuối sẽ để trống
-   5. Toàn bộ nằm trong MỘT bảng duy nhất
-   6. Không tạo thêm bảng thứ hai
 ===================================================== */
 
 
 function renderSpecification(){
 
-
-    /* ---------------------------------------------
-       KIỂM TRA SẢN PHẨM
-    --------------------------------------------- */
 
     if(
         !product ||
@@ -635,20 +509,10 @@ function renderSpecification(){
     }
 
 
-
-    /* ---------------------------------------------
-       BIẾN LƯU BẢNG VÀ TEXT
-    --------------------------------------------- */
-
     let tableHTML = "";
 
     let textArray = [];
 
-
-
-    /* ---------------------------------------------
-       ĐỌC DỮ LIỆU SPECS
-    --------------------------------------------- */
 
     product.specs.forEach(spec => {
 
@@ -659,7 +523,6 @@ function renderSpecification(){
         ){
 
             tableHTML = spec;
-
 
         }else{
 
@@ -681,11 +544,6 @@ function renderSpecification(){
     });
 
 
-
-    /* ---------------------------------------------
-       TÁCH BẢNG GỐC
-    --------------------------------------------- */
-
     const temp =
     document.createElement("div");
 
@@ -698,7 +556,6 @@ function renderSpecification(){
     temp.querySelector("table");
 
 
-
     if(!oldTable){
 
         return;
@@ -706,23 +563,11 @@ function renderSpecification(){
     }
 
 
-
-    /* ---------------------------------------------
-       LẤY SỐ LƯỢNG CỘT CỦA BẢNG
-
-       Ví dụ:
-
-       2 cột → text 2 cột
-       3 cột → text 3 cột
-       5 cột → text 5 cột
-    --------------------------------------------- */
-
     const firstRow =
     oldTable.querySelector("tr");
 
 
     let columnCount = 2;
-
 
 
     if(firstRow){
@@ -740,11 +585,6 @@ function renderSpecification(){
 
     }
 
-
-
-    /* ---------------------------------------------
-       LẤY TOÀN BỘ NỘI DUNG BẢNG GỐC
-    --------------------------------------------- */
 
     let tableRows = "";
 
@@ -767,11 +607,6 @@ function renderSpecification(){
     });
 
 
-
-    /* ---------------------------------------------
-       TẠO BẢNG DUY NHẤT
-    --------------------------------------------- */
-
     let finalTable = `
 
     <table class="spec-main-table">
@@ -785,13 +620,6 @@ function renderSpecification(){
     `;
 
 
-
-    /* ---------------------------------------------
-       THÊM TEXT VÀO CUỐI BẢNG
-
-       SỐ CỘT TEXT = SỐ CỘT BẢNG
-    --------------------------------------------- */
-
     if(textArray.length > 0){
 
 
@@ -800,7 +628,6 @@ function renderSpecification(){
         <tbody class="spec-text-body">
 
         `;
-
 
 
         for(
@@ -817,11 +644,6 @@ function renderSpecification(){
             `;
 
 
-
-            /* -----------------------------------------
-               TẠO ĐÚNG SỐ Ô THEO BẢNG
-            ----------------------------------------- */
-
             for(
                 let col = 0;
                 col < columnCount;
@@ -831,7 +653,6 @@ function renderSpecification(){
 
                 const text =
                 textArray[i + col] || "";
-
 
 
                 finalTable += `
@@ -847,16 +668,13 @@ function renderSpecification(){
             }
 
 
-
             finalTable += `
 
             </tr>
 
             `;
 
-
         }
-
 
 
         finalTable += `
@@ -868,7 +686,6 @@ function renderSpecification(){
     }
 
 
-
     finalTable += `
 
     </table>
@@ -876,16 +693,10 @@ function renderSpecification(){
     `;
 
 
-
-    /* ---------------------------------------------
-       HIỂN THỊ BẢNG
-    --------------------------------------------- */
-
     const tableBox =
     document.getElementById(
         "productTableSpecs"
     );
-
 
 
     if(tableBox){
@@ -895,13 +706,6 @@ function renderSpecification(){
 
     }
 
-
-
-    /* ---------------------------------------------
-       KHÔNG DÙNG KHUNG TEXT RIÊNG
-
-       Toàn bộ text đã nằm trong bảng
-    --------------------------------------------- */
 
     const textBox =
     document.getElementById(
@@ -918,24 +722,16 @@ function renderSpecification(){
 }
 
 
-
-/* =====================================================
-   KHỞI TẠO THÔNG SỐ KỸ THUẬT
-===================================================== */
-
 setTimeout(() => {
 
     renderSpecification();
 
 }, 300);
+
+
 /* =====================================================
    PART 5:
    PRODUCT TAB CONTROL
-
-   Chức năng:
-   - Bấm mở tab
-   - Bấm lần 2 đóng tab
-   - Chỉ mở 1 tab
 ===================================================== */
 
 
@@ -946,7 +742,6 @@ function openProductTab(event, tabId){
     document.getElementById(tabId);
 
 
-
     if(!target){
 
         return;
@@ -954,11 +749,8 @@ function openProductTab(event, tabId){
     }
 
 
-
     const isOpen =
     target.classList.contains("active");
-
-
 
 
     // đóng toàn bộ nội dung tab
@@ -967,13 +759,9 @@ function openProductTab(event, tabId){
     .querySelectorAll(".tab-content")
     .forEach(tab=>{
 
-
         tab.classList.remove("active");
 
-
     });
-
-
 
 
     // bỏ trạng thái nút
@@ -982,14 +770,9 @@ function openProductTab(event, tabId){
     .querySelectorAll(".tab-buttons button")
     .forEach(btn=>{
 
-
         btn.classList.remove("active");
 
-
     });
-
-
-
 
 
     // nếu trước đó chưa mở
@@ -997,22 +780,18 @@ function openProductTab(event, tabId){
 
     if(!isOpen){
 
-
         target.classList.add("active");
-
 
         event.currentTarget.classList.add("active");
 
-
     }
 
-
 }
+
+
 /* =====================================================
    PART 6:
    PRODUCT MANUAL PDF
-
-   Hiển thị file hướng dẫn sử dụng
 ===================================================== */
 
 
@@ -1023,7 +802,6 @@ function renderProductManual(){
     document.getElementById("productManual");
 
 
-
     if(!box){
 
         return;
@@ -1031,75 +809,52 @@ function renderProductManual(){
     }
 
 
-
     if(!product.manual){
 
-
         box.innerHTML = "";
-
 
         return;
 
     }
 
 
-
-
     box.innerHTML = `
 
-
     <div class="manual-box">
-
 
         <h3>
             HƯỚNG DẪN SỬ DỤNG
         </h3>
 
-
-
         <p>
             Tài liệu hướng dẫn sử dụng sản phẩm:
         </p>
-
-
 
         <a class="btn-manual"
            href="${product.manual}"
            target="_blank">
 
-
             📄 XEM HƯỚNG DẪN PDF
 
-
         </a>
-
-
 
         <a class="btn-manual download"
            href="${product.manual}"
            download>
 
-
             ⬇ TẢI FILE PDF
-
 
         </a>
 
-
     </div>
 
-
     `;
-
 
 }
 
 
-
 setTimeout(()=>{
 
-
     renderProductManual();
-
 
 },800);
